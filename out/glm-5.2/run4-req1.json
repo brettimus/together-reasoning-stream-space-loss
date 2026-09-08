@@ -1,0 +1,51 @@
+{
+  "model": "zai-org/GLM-5.2",
+  "run": 4,
+  "req": 1,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " user wants me to run `",
+    "echo kimi` and report",
+    " the exit code. I can",
+    " use the",
+    " shell to",
+    " run the",
+    " command and capture",
+    " the exit code in",
+    " one go",
+    "."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "call_01a080ba71317772b5c60ba4",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi; echo \\\"Exit code: $?\\\"\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me to run `\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"echo kimi` and report\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" the exit code. I can\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" use the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" shell to\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" run the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" command and capture\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" the exit code in\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" one go\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\".\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"call_01a080ba71317772b5c60ba4\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"command\\\":\\\"echo kimi; echo \\\\\\\"Exit code: $?\\\\\\\"\\\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"}\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"matched_stop\":154829}]}",
+    "data: {\"id\":\"d030bfcb-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866097,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":203,\"completion_tokens\":57,\"total_tokens\":260,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":35}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [],
+  "flaggedSeams": []
+}

@@ -1,0 +1,52 @@
+{
+  "model": "zai-org/GLM-5.2",
+  "run": 3,
+  "req": 2,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " command ran successfully",
+    " and output \"",
+    "kimi\". The exit code",
+    " should be 0 since the",
+    " command completed without",
+    " errors. Let me confirm",
+    " the",
+    " exit code by running",
+    " a",
+    " follow",
+    "-up command."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "call_01a080ba6f4e70338d92ccfd",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo $?\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" command ran successfully\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" and output \\\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"kimi\\\". The exit code\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" should be 0 since the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" command completed without\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" errors. Let me confirm\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" exit code by running\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" a\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" follow\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"-up command.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"call_01a080ba6f4e70338d92ccfd\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"command\\\":\\\"echo $?\\\"}\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"matched_stop\":154829}]}",
+    "data: {\"id\":\"4edc2090-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":245,\"completion_tokens\":50,\"total_tokens\":295,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":37}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [],
+  "flaggedSeams": []
+}

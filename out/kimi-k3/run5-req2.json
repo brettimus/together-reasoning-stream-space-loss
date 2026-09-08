@@ -1,0 +1,55 @@
+{
+  "model": "moonshotai/Kimi-K3",
+  "run": 5,
+  "req": 2,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " command ran successfully. Output was \"kimi\". The exit code isn't directly shown, but echo always succeeds. To",
+    " be certain, I could run `echo kimi; echo $?` — but the tool didn't report an error,",
+    " and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can",
+    "verify quickly to be careful."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "sandbox_exec_1",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi; echo \\\"exit code: $?\\\"\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" command ran successfully. Output was \\\"kimi\\\". The exit code isn't directly shown, but echo always succeeds. To\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" be certain, I could run `echo kimi; echo $?` — but the tool didn't report an error,\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"verify quickly to be careful.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"sandbox_exec_1\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"command\\\":\\\"echo kimi; echo \\\\\\\"exit code: $?\\\\\\\"\\\"}\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"usage\":{\"prompt_tokens\":322,\"completion_tokens\":132,\"total_tokens\":454,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":75}}}]}",
+    "data: {\"id\":\"chatcmpl-01a080bab5af7bb193d50dc0\",\"object\":\"chat.completion.chunk\",\"created\":1788866114,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":322,\"completion_tokens\":132,\"total_tokens\":454,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":75}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [
+    {
+      "i": 3,
+      "left": " and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can",
+      "right": "verify quickly to be careful.",
+      "leftRun": "can",
+      "rightRun": "verify",
+      "concatIsWord": false
+    }
+  ],
+  "flaggedSeams": [
+    {
+      "i": 3,
+      "left": " and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can",
+      "right": "verify quickly to be careful.",
+      "leftRun": "can",
+      "rightRun": "verify"
+    }
+  ]
+}

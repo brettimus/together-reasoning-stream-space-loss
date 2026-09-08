@@ -1,0 +1,156 @@
+[
+  {
+    "model": "moonshotai/Kimi-K3",
+    "requests": 10,
+    "okRequests": 10,
+    "errors": [],
+    "withLostSpace": 7,
+    "rate": "70%",
+    "meanReasoningDeltas": 4.2,
+    "seams": [
+      {
+        "run": 1,
+        "req": 1,
+        "joined": "Theuser wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
+        "frames": [
+          {
+            "prev": "The",
+            "next": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code."
+          }
+        ]
+      },
+      {
+        "run": 1,
+        "req": 2,
+        "joined": "The command ran successfully and printed \"kimi\". The tool output doesn't explicitly show an exit code, butsince the command succeeded (echo always succeeds), the exit code is 0.",
+        "frames": [
+          {
+            "prev": " command ran successfully and printed \"kimi\". The tool output doesn't explicitly show an exit code, but",
+            "next": "since the command succeeded (echo always succeeds), the exit code is 0."
+          }
+        ]
+      },
+      {
+        "run": 2,
+        "req": 1,
+        "joined": "The user wants me to run `echo kimi` and report the exit code. I'll run it with the shell tool andappend `; echo \"exit=$?\"` so I can capture the exit code reliably.",
+        "frames": [
+          {
+            "prev": " user wants me to run `echo kimi` and report the exit code. I'll run it with the shell tool and",
+            "next": "append `; echo \"exit=$?\"` so I can capture the exit code reliably."
+          }
+        ]
+      },
+      {
+        "run": 3,
+        "req": 1,
+        "joined": "Theuser wants me to run `echo kimi` and report the exit code.",
+        "frames": [
+          {
+            "prev": "The",
+            "next": "user wants me to run `echo kimi` and report the exit code."
+          }
+        ]
+      },
+      {
+        "run": 4,
+        "req": 1,
+        "joined": "Theuser wants me to run the shell command `echo kimi` and report the exit code.",
+        "frames": [
+          {
+            "prev": "The",
+            "next": "user wants me to run the shell command `echo kimi` and report the exit code."
+          }
+        ]
+      },
+      {
+        "run": 5,
+        "req": 1,
+        "joined": "Theuser wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
+        "frames": [
+          {
+            "prev": "The",
+            "next": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code."
+          }
+        ]
+      },
+      {
+        "run": 5,
+        "req": 2,
+        "joined": "The command ran successfully. Output was \"kimi\". The exit code isn't directly shown, but echo always succeeds. To be certain, I could run `echo kimi; echo $?` — but the tool didn't report an error, and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I canverify quickly to be careful.",
+        "frames": [
+          {
+            "prev": " and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can",
+            "next": "verify quickly to be careful."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "model": "zai-org/GLM-5.2",
+    "requests": 10,
+    "okRequests": 10,
+    "errors": [],
+    "withLostSpace": 4,
+    "rate": "40%",
+    "meanReasoningDeltas": 21.9,
+    "seams": [
+      {
+        "run": 1,
+        "req": 1,
+        "joined": "The user wants me to run the shell command `echo kimi` and then tellthem the exit code.",
+        "frames": [
+          {
+            "prev": "` and then tell",
+            "next": "them the exit code."
+          }
+        ]
+      },
+      {
+        "run": 2,
+        "req": 1,
+        "joined": "The user wants me to run `echo kimi` and then tell them the exit code. I'll run the command and checkthe exit code.",
+        "frames": [
+          {
+            "prev": " command and check",
+            "next": "the exit code."
+          }
+        ]
+      },
+      {
+        "run": 3,
+        "req": 1,
+        "joined": "The user wants me to run the shell command `echo kimi` and then tellthem the exit code.",
+        "frames": [
+          {
+            "prev": "` and then tell",
+            "next": "them the exit code."
+          }
+        ]
+      },
+      {
+        "run": 5,
+        "req": 1,
+        "joined": "The user wants me to run the shell command `echo kimi` and then tell themthe exit code.",
+        "frames": [
+          {
+            "prev": "` and then tell them",
+            "next": "the exit code."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3.7-Plus",
+    "requests": 10,
+    "okRequests": 10,
+    "errors": [],
+    "withLostSpace": 0,
+    "rate": "0%",
+    "meanReasoningDeltas": 0,
+    "seams": [],
+    "qwenThinkMarker": 10
+  }
+]

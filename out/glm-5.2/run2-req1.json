@@ -1,0 +1,64 @@
+{
+  "model": "zai-org/GLM-5.2",
+  "run": 2,
+  "req": 1,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " user wants me to run `",
+    "echo kimi` and then",
+    " tell them the exit code.",
+    " I",
+    "'ll run the",
+    " command and check",
+    "the exit code."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "call_01a080ba5b877141a0eb6a96",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi; echo \\\"Exit code: $?\\\"\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me to run `\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"echo kimi` and then\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" tell them the exit code.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" I\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"'ll run the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" command and check\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    ": keepalive",
+    ": keepalive",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"the exit code.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"call_01a080ba5b877141a0eb6a96\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"command\\\":\\\"echo kimi; echo \\\\\\\"Exit code: $?\\\\\\\"\\\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"}\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"matched_stop\":154829}]}",
+    "data: {\"id\":\"ad6718a4-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866079,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":203,\"completion_tokens\":52,\"total_tokens\":255,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":30}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [
+    {
+      "i": 6,
+      "left": " command and check",
+      "right": "the exit code.",
+      "leftRun": "check",
+      "rightRun": "the",
+      "concatIsWord": false
+    }
+  ],
+  "flaggedSeams": [
+    {
+      "i": 6,
+      "left": " command and check",
+      "right": "the exit code.",
+      "leftRun": "check",
+      "rightRun": "the"
+    }
+  ]
+}

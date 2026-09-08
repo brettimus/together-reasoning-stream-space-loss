@@ -1,0 +1,55 @@
+{
+  "model": "zai-org/GLM-5.2",
+  "run": 3,
+  "req": 1,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " user wants me to run the",
+    " shell command `echo kimi",
+    "` and then tell",
+    "them the exit code."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "call_01a080ba6d2c7440804f2b99",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me to run the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" shell command `echo kimi\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"` and then tell\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"them the exit code.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"call_01a080ba6d2c7440804f2b99\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"command\\\":\\\"echo kimi\\\"}\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"matched_stop\":154829}]}",
+    "data: {\"id\":\"2afdf882-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866096,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":203,\"completion_tokens\":36,\"total_tokens\":239,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":22}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [
+    {
+      "i": 3,
+      "left": "` and then tell",
+      "right": "them the exit code.",
+      "leftRun": "tell",
+      "rightRun": "them",
+      "concatIsWord": false
+    }
+  ],
+  "flaggedSeams": [
+    {
+      "i": 3,
+      "left": "` and then tell",
+      "right": "them the exit code.",
+      "leftRun": "tell",
+      "rightRun": "them"
+    }
+  ]
+}

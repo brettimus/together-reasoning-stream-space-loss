@@ -1,0 +1,55 @@
+{
+  "model": "zai-org/GLM-5.2",
+  "run": 5,
+  "req": 1,
+  "ok": true,
+  "reasoningDeltas": [
+    "The",
+    " user wants me to run the",
+    " shell command `echo kimi",
+    "` and then tell them",
+    "the exit code."
+  ],
+  "contentDeltas": [],
+  "toolCalls": [
+    {
+      "id": "call_01a080ba7c7775e0a9e88329",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi; echo \\\"EXIT_CODE:$?\\\"\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
+  "rawSse": [
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me to run the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" shell command `echo kimi\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"` and then tell them\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"the exit code.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"call_01a080ba7c7775e0a9e88329\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"command\\\":\\\"echo kimi; echo \\\\\\\"EXIT_CODE:$?\\\\\\\"\\\"}\"}}],\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":null},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"matched_stop\":154829}]}",
+    "data: {\"id\":\"855a4cd5-aws_ec1\",\"object\":\"chat.completion.chunk\",\"created\":1788866099,\"model\":\"zai-org/GLM-5.2\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":203,\"completion_tokens\":43,\"total_tokens\":246,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":22}}}",
+    "data: [DONE]"
+  ],
+  "letterBoundaries": [
+    {
+      "i": 3,
+      "left": "` and then tell them",
+      "right": "the exit code.",
+      "leftRun": "them",
+      "rightRun": "the",
+      "concatIsWord": false
+    }
+  ],
+  "flaggedSeams": [
+    {
+      "i": 3,
+      "left": "` and then tell them",
+      "right": "the exit code.",
+      "leftRun": "them",
+      "rightRun": "the"
+    }
+  ]
+}
