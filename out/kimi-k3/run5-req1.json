@@ -4,47 +4,33 @@
   "req": 1,
   "ok": true,
   "reasoningDeltas": [
-    "The",
-    "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code."
+    "Need",
+    " run shell command and tell exit code. Use sandbox_exec. Then respond",
+    "."
   ],
   "contentDeltas": [],
   "toolCalls": [
     {
       "id": "sandbox_exec_0",
       "name": "sandbox_exec",
-      "arguments": "{\"command\":\"echo kimi\"}"
+      "arguments": "{\"command\":\"echo kimi; printf 'EXIT_CODE:%s\\\\n' \\\"$?\\\"\"}"
     }
   ],
   "finishReason": "tool_calls",
   "rawSse": [
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"sandbox_exec_0\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"command\\\":\\\"echo kimi\\\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"}\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"usage\":{\"prompt_tokens\":219,\"completion_tokens\":70,\"total_tokens\":289,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":21}}}]}",
-    "data: {\"id\":\"chatcmpl-01a080baa7a87842ae4b46f9\",\"object\":\"chat.completion.chunk\",\"created\":1788866111,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":219,\"completion_tokens\":70,\"total_tokens\":289,\"prompt_tokens_details\":{\"cached_tokens\":192},\"completion_tokens_details\":{\"reasoning_tokens\":21}}}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Need\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" run shell command and tell exit code. Use sandbox_exec. Then respond\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\".\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"sandbox_exec_0\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"command\\\":\\\"echo kimi; printf 'EXIT\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"_CODE:%s\\\\\\\\n' \\\\\\\"$?\\\\\\\"\\\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"}\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"usage\":{\"prompt_tokens\":219,\"completion_tokens\":77,\"total_tokens\":296,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":16}}}]}",
+    "data: {\"id\":\"chatcmpl-01a110913430744ba15695f4\",\"object\":\"chat.completion.chunk\",\"created\":1791279313,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":219,\"completion_tokens\":77,\"total_tokens\":296,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":16}}}",
     "data: [DONE]"
   ],
-  "letterBoundaries": [
-    {
-      "i": 0,
-      "left": "The",
-      "right": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
-      "leftRun": "The",
-      "rightRun": "user",
-      "concatIsWord": false
-    }
-  ],
-  "flaggedSeams": [
-    {
-      "i": 0,
-      "left": "The",
-      "right": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
-      "leftRun": "The",
-      "rightRun": "user"
-    }
-  ]
+  "letterBoundaries": [],
+  "flaggedSeams": []
 }

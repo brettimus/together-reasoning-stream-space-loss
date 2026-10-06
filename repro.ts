@@ -1,15 +1,19 @@
-import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, existsSync, rmSync } from "node:fs";
 import { join } from "node:path";
 
 const API = "https://api.together.xyz/v1/chat/completions";
 const KEY = process.env.TOGETHER_AI_API_KEY;
 if (!KEY) throw new Error("TOGETHER_AI_API_KEY not set (pass --env-file=.env.together)");
 
-const MODELS = [
+const ALL_MODELS = [
   { id: "moonshotai/Kimi-K3", dir: "kimi-k3" },
   { id: "zai-org/GLM-5.2", dir: "glm-5.2" },
   { id: "Qwen/Qwen3.7-Plus", dir: "qwen3.7-plus" },
 ];
+// Optional filter by dir name, e.g. MODELS=kimi-k3,glm-5.2 to skip Qwen.
+const only = process.env.MODELS?.split(",").map(s => s.trim()).filter(Boolean);
+const MODELS = only ? ALL_MODELS.filter(m => only.includes(m.dir)) : ALL_MODELS;
+if (MODELS.length === 0) throw new Error(`MODELS=${process.env.MODELS} matches none of ${ALL_MODELS.map(m => m.dir).join(",")}`);
 const RUNS = 5;
 const OUT = join(import.meta.dir, "out");
 
@@ -67,7 +71,7 @@ function baseBody(messages: unknown[]) {
   };
 }
 
-async function streamRequest(model: string, messages: unknown[], label: string): Promise<ReqResult> {
+async function streamRequest(model: string, messages: unknown[]): Promise<ReqResult> {
   const res: ReqResult = {
     model, run: 0, req: 0, ok: false,
     reasoningDeltas: [], contentDeltas: [], toolCalls: [], finishReason: null,
@@ -128,7 +132,6 @@ async function streamRequest(model: string, messages: unknown[], label: string):
   } catch (e: any) {
     res.error = String(e?.message ?? e);
   }
-  void label;
 
   for (let i = 0; i + 1 < res.reasoningDeltas.length; i++) {
     const left = res.reasoningDeltas[i];
@@ -152,13 +155,16 @@ async function toolTurn(model: string, run: number, dir: string): Promise<ReqRes
     { role: "system", content: SYS },
     { role: "user", content: USER },
   ];
-  const r1 = await streamRequest(model, msgs1, `${model} run${run} req1`);
+  const r1 = await streamRequest(model, msgs1);
   r1.run = run; r1.req = 1;
 
   const outDir = join(OUT, dir);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, `run${run}-req1.sse.txt`), r1.rawSse.join("\n") + "\n");
   writeFileSync(join(outDir, `run${run}-req1.json`), JSON.stringify(r1, null, 2));
+  // Drop req2 files from an earlier run so a failed req1 doesn't sit next to a stale req2.
+  rmSync(join(outDir, `run${run}-req2.sse.txt`), { force: true });
+  rmSync(join(outDir, `run${run}-req2.json`), { force: true });
 
   const results = [r1];
   if (!r1.ok || r1.toolCalls.length === 0) return results;
@@ -174,7 +180,7 @@ async function toolTurn(model: string, run: number, dir: string): Promise<ReqRes
     },
     { role: "tool", tool_call_id: tc.id || `call_0`, content: "kimi" },
   ];
-  const r2 = await streamRequest(model, msgs2, `${model} run${run} req2`);
+  const r2 = await streamRequest(model, msgs2);
   r2.run = run; r2.req = 2;
   writeFileSync(join(outDir, `run${run}-req2.sse.txt`), r2.rawSse.join("\n") + "\n");
   writeFileSync(join(outDir, `run${run}-req2.json`), JSON.stringify(r2, null, 2));
@@ -188,6 +194,7 @@ function summarize(model: string, all: ReqResult[]) {
   const meanDeltas = ok.length ? ok.reduce((s, r) => s + r.reasoningDeltas.length, 0) / ok.length : 0;
   return {
     model,
+    date: new Date().toISOString().slice(0, 10),
     requests: all.length,
     okRequests: ok.length,
     errors: all.filter(r => !r.ok).map(r => `run${r.run} req${r.req}: ${r.error}`),
@@ -221,7 +228,13 @@ const summaries = await Promise.all(MODELS.map(async m => {
   return summarize(m.id, acc);
 }));
 
-writeFileSync(join(OUT, "results.json"), JSON.stringify(summaries, null, 2));
+// Keep summaries for models that were not run this time (see MODELS above).
+const resultsPath = join(OUT, "results.json");
+const previous: { model: string }[] = existsSync(resultsPath) ? JSON.parse(readFileSync(resultsPath, "utf8")) : [];
+const merged = ALL_MODELS
+  .map(m => summaries.find(s => s.model === m.id) ?? previous.find(p => p.model === m.id))
+  .filter(Boolean);
+writeFileSync(resultsPath, JSON.stringify(merged, null, 2));
 console.log("\n==== SUMMARY ====");
 console.log(JSON.stringify(summaries, null, 2));
 console.log(`elapsed ${(Date.now() - t0) / 1000}s`);

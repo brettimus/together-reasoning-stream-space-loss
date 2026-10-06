@@ -1,87 +1,77 @@
 [
   {
     "model": "moonshotai/Kimi-K3",
+    "date": "2026-10-06",
     "requests": 10,
     "okRequests": 10,
     "errors": [],
-    "withLostSpace": 7,
-    "rate": "70%",
-    "meanReasoningDeltas": 4.2,
+    "withLostSpace": 6,
+    "rate": "60%",
+    "meanReasoningDeltas": 6.3,
     "seams": [
       {
         "run": 1,
-        "req": 1,
-        "joined": "Theuser wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
-        "frames": [
-          {
-            "prev": "The",
-            "next": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code."
-          }
-        ]
-      },
-      {
-        "run": 1,
         "req": 2,
-        "joined": "The command ran successfully and printed \"kimi\". The tool output doesn't explicitly show an exit code, butsince the command succeeded (echo always succeeds), the exit code is 0.",
+        "joined": "The command ran successfully. The output was \"kimi\". The tool didn't explicitly show me the exit code, but since the command completed without error, I can check the exit code. Actually, let me run it again with an explicit echoof the exit code to be sure.",
         "frames": [
           {
-            "prev": " command ran successfully and printed \"kimi\". The tool output doesn't explicitly show an exit code, but",
-            "next": "since the command succeeded (echo always succeeds), the exit code is 0."
+            "prev": ", let me run it again with an explicit echo",
+            "next": "of the exit code to be sure."
           }
         ]
       },
       {
         "run": 2,
         "req": 1,
-        "joined": "The user wants me to run `echo kimi` and report the exit code. I'll run it with the shell tool andappend `; echo \"exit=$?\"` so I can capture the exit code reliably.",
+        "joined": "The user wants me to run `echo kimi` and report the exit code. Simple task. Let me run the commandand capture the exit code.",
         "frames": [
           {
-            "prev": " user wants me to run `echo kimi` and report the exit code. I'll run it with the shell tool and",
-            "next": "append `; echo \"exit=$?\"` so I can capture the exit code reliably."
+            "prev": " the exit code. Simple task. Let me run the command",
+            "next": "and capture the exit code."
+          }
+        ]
+      },
+      {
+        "run": 2,
+        "req": 2,
+        "joined": "Interesting \u2014 the output only shows \"kimi\" but not the EXIT_CODE line. Perhaps the sandbox only captures the first line, or maybe the exit code echo didn't work as expected. Let me try running it againto verify the exit code more explicitly.",
+        "frames": [
+          {
+            "prev": " work as expected. Let me try running it again",
+            "next": "to verify the exit code more explicitly."
           }
         ]
       },
       {
         "run": 3,
         "req": 1,
-        "joined": "Theuser wants me to run `echo kimi` and report the exit code.",
+        "joined": "The user wants me to run `echo kimi` and reportthe exit code.",
         "frames": [
           {
-            "prev": "The",
-            "next": "user wants me to run `echo kimi` and report the exit code."
+            "prev": " user wants me to run `echo kimi` and report",
+            "next": "the exit code."
           }
         ]
       },
       {
         "run": 4,
         "req": 1,
-        "joined": "Theuser wants me to run the shell command `echo kimi` and report the exit code.",
+        "joined": "The user wants me to run `echo kimi` and reportthe exit code. Let me do that.",
         "frames": [
           {
-            "prev": "The",
-            "next": "user wants me to run the shell command `echo kimi` and report the exit code."
-          }
-        ]
-      },
-      {
-        "run": 5,
-        "req": 1,
-        "joined": "Theuser wants me to run `echo kimi` with the sandbox_exec tool and report the exit code.",
-        "frames": [
-          {
-            "prev": "The",
-            "next": "user wants me to run `echo kimi` with the sandbox_exec tool and report the exit code."
+            "prev": " user wants me to run `echo kimi` and report",
+            "next": "the exit code. Let me do that."
           }
         ]
       },
       {
         "run": 5,
         "req": 2,
-        "joined": "The command ran successfully. Output was \"kimi\". The exit code isn't directly shown, but echo always succeeds. To be certain, I could run `echo kimi; echo $?` — but the tool didn't report an error, and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I canverify quickly to be careful.",
+        "joined": "Tool returned output only 'kimi', didn't show exit code? Maybe wrapper strips? I appended printf but output only kimi, weird. Need maybe run command `echo kimi; echo $?` but it should show. The sandbox_exec likely returns stdout only? It returned 'kimi' only; maybe because command string semicolon with printf suppressed? Let's test with `sh -c 'echo kimi; code=$?; echo code=$code'`. Need final answer with exit code. If echo succeeds exit code 0. Butto be safe, run again maybe.",
         "frames": [
           {
-            "prev": " and typically a non-zero exit would be flagged. The command succeeded, so exit code is 0. I can",
-            "next": "verify quickly to be careful."
+            "prev": " exit code. If echo succeeds exit code 0. But",
+            "next": "to be safe, run again maybe."
           }
         ]
       }
@@ -89,31 +79,43 @@
   },
   {
     "model": "zai-org/GLM-5.2",
+    "date": "2026-10-06",
     "requests": 10,
     "okRequests": 10,
     "errors": [],
-    "withLostSpace": 4,
-    "rate": "40%",
-    "meanReasoningDeltas": 21.9,
+    "withLostSpace": 7,
+    "rate": "70%",
+    "meanReasoningDeltas": 15.1,
     "seams": [
       {
         "run": 1,
         "req": 1,
-        "joined": "The user wants me to run the shell command `echo kimi` and then tellthem the exit code.",
+        "joined": "The user wants me to run `echo kimi` and reportthe exit code.",
         "frames": [
           {
-            "prev": "` and then tell",
-            "next": "them the exit code."
+            "prev": "echo kimi` and report",
+            "next": "the exit code."
+          }
+        ]
+      },
+      {
+        "run": 1,
+        "req": 2,
+        "joined": "The command ran, and the output shows \"kimi\". The exit code for `echo` is always 0. The second echo with \"Exit code: $?\" didn't appear in the output, which is a bit odd \u2014 maybe the sandbox only shows certain output. But regardless, the `echo kimi` command succeeded, so the exit code is 0.\n\nActually, looking more carefully, it seems like only \"kimi\" was returned in the output. The \"Exit code: 0\" part might not have been captured or shown. But since `echo` is a simple command that almost always succeeds, the exit codeis 0.",
+        "frames": [
+          {
+            "prev": " always succeeds, the exit code",
+            "next": "is 0."
           }
         ]
       },
       {
         "run": 2,
         "req": 1,
-        "joined": "The user wants me to run `echo kimi` and then tell them the exit code. I'll run the command and checkthe exit code.",
+        "joined": "The user wants me to run the shell command `echo kimi` and then tell themthe exit code.",
         "frames": [
           {
-            "prev": " command and check",
+            "prev": "` and then tell them",
             "next": "the exit code."
           }
         ]
@@ -121,11 +123,33 @@
       {
         "run": 3,
         "req": 1,
-        "joined": "The user wants me to run the shell command `echo kimi` and then tellthem the exit code.",
+        "joined": "The user wants me to run the shell command `echo kimi` and then reportthe exit code.",
         "frames": [
           {
-            "prev": "` and then tell",
-            "next": "them the exit code."
+            "prev": "` and then report",
+            "next": "the exit code."
+          }
+        ]
+      },
+      {
+        "run": 3,
+        "req": 2,
+        "joined": "The command ran and output \"kimi\". The exit code of `echo kimi` is 0 (success), which is the standard exit code for a successful `echo` command. The second echo with \"EXIT_CODE: $?\" didn't appear in the output, which is a bit odd, but I know that `echo kimi` always returns exit code 0.\n\nWait, let me re-read the output. It only shows \"kimi\". The second echo's output \"EXIT_CODE: 0\" should have appeared too. But since the tool only returned \"kimi\", it's possible the output was truncated or only the first line was shown. Regardless, I know that `echo kimi` returns exitcode 0.",
+        "frames": [
+          {
+            "prev": "` returns exit",
+            "next": "code 0."
+          }
+        ]
+      },
+      {
+        "run": 4,
+        "req": 1,
+        "joined": "The user wants me to run `echo kimi` and report the exit code. I'll run the command and capturethe exit code.",
+        "frames": [
+          {
+            "prev": " command and capture",
+            "next": "the exit code."
           }
         ]
       },
@@ -144,6 +168,7 @@
   },
   {
     "model": "Qwen/Qwen3.7-Plus",
+    "date": "2026-09-08",
     "requests": 10,
     "okRequests": 10,
     "errors": [],

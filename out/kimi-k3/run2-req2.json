@@ -4,39 +4,63 @@
   "req": 2,
   "ok": true,
   "reasoningDeltas": [
-    "The",
-    " output shows \"kimi\" but I don't see the exit_code line in the output. It seems",
-    " the second echo output wasn't captured, or the tool only returned stdout of the first command? Actually the output only",
-    " shows \"kimi\". The exit code of `echo kimi` should be 0 regardless, since echo",
-    "succeeded. I can report that the command succeeded with exit code 0."
+    "Interesting",
+    " — the output only shows \"kimi\" but not the",
+    " EXIT_CODE line. Perhaps the sandbox only captures the",
+    " first line, or maybe the exit code echo didn't",
+    " work as expected. Let me try running it again",
+    "to verify the exit code more explicitly."
   ],
   "contentDeltas": [
-    "The command `echo kimi` ran successfully and printed `kimi`. Its exit code is **0** (success)."
+    "The output only showe",
+    "d the first line, so let me verify the exit code more expl",
+    "icitly:"
   ],
-  "toolCalls": [],
-  "finishReason": "stop",
+  "toolCalls": [
+    {
+      "id": "sandbox_exec_1",
+      "name": "sandbox_exec",
+      "arguments": "{\"command\":\"echo kimi; printf 'exit code: %d\\\\n' $?\"}"
+    }
+  ],
+  "finishReason": "tool_calls",
   "rawSse": [
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" output shows \\\"kimi\\\" but I don't see the exit_code line in the output. It seems\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" the second echo output wasn't captured, or the tool only returned stdout of the first command? Actually the output only\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" shows \\\"kimi\\\". The exit code of `echo kimi` should be 0 regardless, since echo\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"succeeded. I can report that the command succeeded with exit code 0.\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"The command `echo kimi` ran successfully and printed `kimi`. Its exit code is **0** (success).\"},\"logprobs\":null,\"finish_reason\":null}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"stop\",\"usage\":{\"prompt_tokens\":350,\"completion_tokens\":115,\"total_tokens\":465,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":80}}}]}",
-    "data: {\"id\":\"chatcmpl-01a080ba4de07cd2860a9633\",\"object\":\"chat.completion.chunk\",\"created\":1788866088,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":350,\"completion_tokens\":115,\"total_tokens\":465,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":80}}}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Interesting\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" — the output only shows \\\"kimi\\\" but not the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" EXIT_CODE line. Perhaps the sandbox only captures the\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" first line, or maybe the exit code echo didn't\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" work as expected. Let me try running it again\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"to verify the exit code more explicitly.\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"The output only showe\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"d the first line, so let me verify the exit code more expl\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"icitly:\"},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"sandbox_exec_1\",\"type\":\"function\",\"function\":{\"name\":\"sandbox_exec\",\"arguments\":\"\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"command\\\":\\\"echo kimi;\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\" printf 'exit code: %d\\\\\\\\n' $?\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"}\"}}]},\"logprobs\":null,\"finish_reason\":null}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"usage\":{\"prompt_tokens\":348,\"completion_tokens\":130,\"total_tokens\":478,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":51}}}]}",
+    "data: {\"id\":\"chatcmpl-01a11090fd097747b2413b40\",\"object\":\"chat.completion.chunk\",\"created\":1791279299,\"model\":\"moonshotai/Kimi-K3\",\"system_fingerprint\":\"default\",\"choices\":[],\"usage\":{\"prompt_tokens\":348,\"completion_tokens\":130,\"total_tokens\":478,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":51}}}",
     "data: [DONE]"
   ],
   "letterBoundaries": [
     {
-      "i": 3,
-      "left": " shows \"kimi\". The exit code of `echo kimi` should be 0 regardless, since echo",
-      "right": "succeeded. I can report that the command succeeded with exit code 0.",
-      "leftRun": "echo",
-      "rightRun": "succeeded",
+      "i": 4,
+      "left": " work as expected. Let me try running it again",
+      "right": "to verify the exit code more explicitly.",
+      "leftRun": "again",
+      "rightRun": "to",
       "concatIsWord": false
     }
   ],
-  "flaggedSeams": []
+  "flaggedSeams": [
+    {
+      "i": 4,
+      "left": " work as expected. Let me try running it again",
+      "right": "to verify the exit code more explicitly.",
+      "leftRun": "again",
+      "rightRun": "to"
+    }
+  ]
 }
